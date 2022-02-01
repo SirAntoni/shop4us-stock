@@ -11,7 +11,7 @@ if (isset($_SESSION['user'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Iniciar sesión | Sistema Interno de control de stock | 2022</title>
+    <title>Iniciar sesión | Sistema Interno de control de stock | <?php echo date("Y"); ?></title>
     <!-- core:css -->
     <link rel="stylesheet" href="assets/vendors/core/core.css">
     <!-- endinject -->
@@ -46,7 +46,7 @@ if (isset($_SESSION['user'])) {
                                         <a href="index.php" class="text-center noble-ui-logo d-block mb-2"><img
                                                 width="100px" src="assets/images/logo.svg"></a>
                                         <h5 class="text-muted text-center font-weight-normal mb-4">¡Bienvenido denuevo!
-                                            Ingrese a su cuenta V2.
+                                            Ingrese a su cuenta.
                                         </h5>
                                         <form id="formLogin">
                                             <input type="hidden" name="option" value="login">
