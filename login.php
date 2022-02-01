@@ -11,7 +11,7 @@ if (isset($_SESSION['user'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="author" content="Antony Culqui Carranza">
+    <meta name="author" content="Antony A. Culqui Carranza">
     <title>Iniciar sesión | Sistema Interno de control de stock | <?php echo date("Y"); ?></title>
     <!-- core:css -->
     <link rel="stylesheet" href="assets/vendors/core/core.css">
