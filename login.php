@@ -46,7 +46,7 @@ if (isset($_SESSION['user'])) {
                                         <a href="index.php" class="text-center noble-ui-logo d-block mb-2"><img
                                                 width="100px" src="assets/images/logo.svg"></a>
                                         <h5 class="text-muted text-center font-weight-normal mb-4">¡Bienvenido denuevo!
-                                            Ingrese a su cuenta.
+                                            Ingrese a su cuenta V2.
                                         </h5>
                                         <form id="formLogin">
                                             <input type="hidden" name="option" value="login">
