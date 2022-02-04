@@ -2,14 +2,14 @@
     <div>
         <h4>Dashboard</h4>
     </div>
-    <div class="d-flex align-items-center flex-wrap text-nowrap">
+    <div class="d-flex align-items-center flex-wrap text-nowrap mt-2 mt-md-0">
         <button type="button" data-toggle="modal" data-target="#modalExchangeRate"
             class="btn btn-primary btn-icon-text mb-2 mb-md-0 mr-2">
             <i class="btn-icon-prepend mr-2" data-feather="dollar-sign"></i>
             Tipo de cambio
         </button>
         <div class="btn-group" role="group">
-            <button type="button" class="btn btn-outline-primary dropdown-toggle btn-icon-text" data-toggle="dropdown"
+            <button type="button" class="btn btn-outline-primary dropdown-toggle btn-icon-text mb-2 mb-md-0" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <i class="btn-icon-prepend mr-2" data-feather="grid"></i> Accesos directos
             </button>
