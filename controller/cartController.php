@@ -14,6 +14,8 @@ $price = '';
 $price_delivery = 0.00;
 
 
+
+
 if(isset($_POST['id'])){
     $id = $_POST['id'];
 }
@@ -81,6 +83,12 @@ switch ($option){
         $granSubtotal = 0;
         $granDelivery = 0;
 
+        if($_SESSION['module'] == "add-sale"){
+            $moneda = "S/. ";
+        }else if($_SESSION['module'] == "add-purchase"){
+            $moneda = "$ ";
+        }
+
         
 
         foreach($_SESSION['cart'] as $index => $article){
@@ -117,12 +125,12 @@ switch ($option){
                 $qty = $article['qty'];
                 $subtotal = $price * $qty;
                 $total = number_format($article['subtotal'],'2','.','');
-                $html = $html."<tr><td><i onclick='delete_cart_article(".$indice.")' class='fas fa-times-circle fa-lg text-danger mr-1' style='cursor:pointer;'></i><i onclick='add_cart_article(".$id.")' class='fas fa-plus-circle fa-lg text-success mr-1' style='cursor:pointer;'></i><i onclick='edit_cart_article(".$id.")' class='fas fa-minus-circle fa-lg text-success mr-1' style='cursor:pointer;'></i><i onclick='get_edit_price_article(".$id.")' class='fas fa-pen-square fa-lg text-dark' style='cursor:pointer;'></i></td><td>".$name."</td><td>".$qty."</td><td> S/. ".$price."</td><td> S/. ".$subtotal."</td></tr>";
+                $html = $html."<tr><td><i onclick='delete_cart_article(".$indice.")' class='fas fa-times-circle fa-lg text-danger mr-1' style='cursor:pointer;'></i><i onclick='add_cart_article(".$id.")' class='fas fa-plus-circle fa-lg text-success mr-1' style='cursor:pointer;'></i><i onclick='edit_cart_article(".$id.")' class='fas fa-minus-circle fa-lg text-success mr-1' style='cursor:pointer;'></i><i onclick='get_edit_price_article(".$id.")' class='fas fa-pen-square fa-lg text-dark' style='cursor:pointer;'></i></td><td>".$name."</td><td>".$qty."</td><td>". $moneda . $price."</td><td>". $moneda . $subtotal."</td></tr>";
 
                /* $html = $html."<tr class='product-action-row'><td colspan='4' class='clearfix'><div class='float-right'><a style='cursor:pointer;' onclick='eliminarproducto($index,$cart)' title='Remove product' class='btn-remove'><span class='sr-only'>Eliminar</span></a> </div> </td></tr>";*/
             }
 
-            $html = $html."<tr><td class='text-right' colspan='4'><b>Subtotal</b> </td><td> S/. ".$granSubtotal."</td></tr><tr><td class='text-right' colspan='4'><b>IGV</b> </td><td> S/. ".$granIgv."</td></tr>".$delivery_html."<tr><td class='text-right' colspan='4'><b>Total</b> </td><td> S/. ".$granTotal."</td></tr>";
+            $html = $html."<tr><td class='text-right' colspan='4'><b>Subtotal</b> </td><td>". $moneda . $granSubtotal."</td></tr><tr><td class='text-right' colspan='4'><b>IGV</b> </td><td>". $moneda . $granIgv."</td></tr>".$delivery_html."<tr><td class='text-right' colspan='4'><b>Total</b> </td><td>". $moneda . $granTotal."</td></tr>";
         }
         echo $html."</div>";
     break;

@@ -14,6 +14,15 @@ if (!isset($_GET['module'])) {
         unset($_SESSION['price_delivery']);
         $_SESSION["cart"] = [];
     }
+
+    if($_GET['module'] == 'add-purchase'){
+        $_SESSION['module'] = 'add-purchase';
+    }elseif($_GET['module'] == 'add-sale'){
+        $_SESSION['module'] = 'add-sale';
+    }else{
+        unset($_SESSION["module"]);
+    }
+
 }
 
 require "config/conexion.php";
