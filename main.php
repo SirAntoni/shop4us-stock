@@ -197,6 +197,19 @@ require "config/conexion.php";
     <script src="assets/js/datepicker.js"></script>
     <script src="assets/js/select2.js"></script>
 
+    <?php
+
+    switch($module){
+        case 'dashboard':
+            echo '<script src="app/dashboard.js"></script>';
+            break;
+        default:
+            echo "";
+            break;
+    }
+    
+    ?>
+
     <script src="app/app.js"></script>
     
     <!-- end custom js for this page -->
