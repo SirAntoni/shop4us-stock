@@ -2706,6 +2706,7 @@ var data_edit_article = function(tbody, table) {
         $("#name").val(data.name);
         $("#category").val(data.id_category);
         $("#brand").val(data.id_brand);
+        $("#detail").val(data.detail);
         $("#description").val(data.description);
         $("#stock").val(data.stock);
         $("#purchase_price").val(data.purchase_price);
