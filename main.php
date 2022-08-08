@@ -203,6 +203,9 @@ require "config/conexion.php";
         case 'dashboard':
             echo '<script src="app/dashboard.js"></script>';
             break;
+        case 'clients':
+            echo '<script src="app/clients.js"></script>';
+            break;
         default:
             echo "";
             break;

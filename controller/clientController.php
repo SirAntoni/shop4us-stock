@@ -46,19 +46,40 @@ if(isset($_POST['email'])){
     $email = $_POST['email'];
 }
 
+if(isset($_POST['departament'])){
+    $departament = $_POST['departament'];
+}
+
+if(isset($_POST['province'])){
+    $province = $_POST['province'];
+}
+
+if(isset($_POST['district'])){
+    $district = $_POST['district'];
+}
+
 
 switch ($option){
     case 'insert':
-        $insert = $clients->insert_client($document_number,$name,$document_type,$direction,$phone,$email);
+        $insert = $clients->insert_client($document_number,$name,$document_type,$direction,$phone,$email,$departament,$province,$district);
     break;
     case 'update':
-        $update = $clients->update_client($id,$document_number,$name,$document_type,$direction,$phone,$email);
+        $update = $clients->update_client($id,$document_number,$name,$document_type,$direction,$phone,$email,$departament,$province,$district);
     break;
     case 'delete':
         $delete = $clients->delete_client($id);
     break;
     case 'select_clients':
         echo json_encode($clients->get_clients());
+    break;
+    case 'departaments':
+        echo json_encode($clients->get_departaments());
+    break;
+    case 'provinces':
+        echo json_encode($clients->get_provinces($departament));
+    break;
+    case 'districts':
+        echo json_encode($clients->get_districts($province));
     break;
     default:
     $listAll = json_encode($clients->get_clients());

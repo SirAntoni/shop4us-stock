@@ -28,6 +28,9 @@
                                 <th>Dirección</th>
                                 <th>Telefono</th>
                                 <th>Email</th>
+                                <th>Departamento</th>
+                                <th>Provincia</th>
+                                <th>Distrito</th>
                                 <th>created_at</th>
                                 <th>updated_at</th>
                                 <th width="10px">Acción</th>
@@ -83,6 +86,27 @@
                                 <input type="phone" name="phone" class="form-control" placeholder="Telefono">
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <select class="departament" name="departament">
+                                    <option value="">Seleccione un departamento</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <select class="province" name="province">
+                                    <option value="">Seleccione una provincia</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <select class="district" name="district">
+                                    <option value="">Seleccione un distrito</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" name="direction" class="form-control" placeholder="Dirección">
@@ -121,12 +145,14 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" name="document_number" id="document_number" class="form-control" placeholder="Documento">
+                                <input type="text" name="document_number" id="document_number" class="form-control"
+                                    placeholder="Documento">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Nombre/Razón social">
+                                <input type="text" name="name" id="name" class="form-control"
+                                    placeholder="Nombre/Razón social">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -143,9 +169,31 @@
                                 <input type="phone" name="phone" id="phone" class="form-control" placeholder="Telefono">
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <select id="departament" class="departament" name="departament">
+                                    <option value="">Seleccione un departamento</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <select id="province" class="province" name="province">
+                                    <option value="">Seleccione una provincia</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <select id="district" class="district" name="district">
+                                    <option value="">Seleccione un distrito</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" name="direction" id="direction" class="form-control" placeholder="Dirección">
+                                <input type="text" name="direction" id="direction" class="form-control"
+                                    placeholder="Dirección">
                             </div>
                         </div>
                         <div class="col-md-6">
