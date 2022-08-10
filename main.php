@@ -54,7 +54,7 @@ require "config/conexion.php";
     <link rel="shortcut icon" href="assets/images/favicon.png" />
     <script src="https://kit.fontawesome.com/808596313d.js" crossorigin="anonymous"></script>
     <!--link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"-->
-    
+
 </head>
 
 <body>
@@ -180,6 +180,7 @@ require "config/conexion.php";
     <script src="assets/vendors/core/core.js"></script>
     <!-- endinject -->
     <!-- plugin js for this page -->
+    <script src="assets/vendors/chartjs/Chart.min.js"></script>
     <script src="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <script src="assets/vendors/progressbar.js/progressbar.min.js"></script>
     <script src="assets/vendors/datatables.net/jquery.dataTables.js"></script>
@@ -187,6 +188,7 @@ require "config/conexion.php";
     <script src="assets/vendors/moment/moment.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="assets/vendors/select2/select2.min.js"></script>
+    <script src="assets/vendors/apexcharts/apexcharts.min.js"></script>
     <!-- end plugin js for this page -->
     <!-- inject:js -->
     <script src="assets/vendors/feather-icons/feather.min.js"></script>
@@ -214,7 +216,171 @@ require "config/conexion.php";
     ?>
 
     <script src="app/app.js"></script>
+    <script>
+var fontFamily = "'Roboto', Helvetica, sans-serif"
+var colors = {
+    primary        : "#6571ff",
+    secondary      : "#7987a1",
+    success        : "#05a34a",
+    info           : "#66d1d1",
+    warning        : "#fbbc06",
+    danger         : "#ff3366",
+    light          : "#e9ecef",
+    dark           : "#060c17",
+    muted          : "#7987a1",
+    gridBorder     : "rgba(77, 138, 240, .15)",
+    bodyColor      : "#000",
+    cardBg         : "#fff"
+  }
+    // Monthly Sales Chart
+    if ($('#monthlySalesChart').length) {
+        var options = {
+            chart: {
+                type: 'bar',
+                height: '318',
+                parentHeightOffset: 0,
+                foreColor: colors.bodyColor,
+                background: colors.cardBg,
+                toolbar: {
+                    show: false
+                },
+            },
+            theme: {
+                mode: 'light'
+            },
+            tooltip: {
+                theme: 'light'
+            },
+            colors: [colors.primary],
+            fill: {
+                opacity: .9
+            },
+            grid: {
+                padding: {
+                    bottom: -4
+                },
+                borderColor: colors.gridBorder,
+                xaxis: {
+                    lines: {
+                        show: true
+                    }
+                }
+            },
+            series: [{
+                name: 'Sales',
+                data: [152, 109, 93, 113, 126, 161, 188, 143, 102, 113, 116, 124]
+            }],
+            xaxis: {
+                type: 'datetime',
+                categories: ['01/01/2022', '02/01/2022', '03/01/2022', '04/01/2022', '05/01/2022', '06/01/2022',
+                    '07/01/2022', '08/01/2022', '09/01/2022', '10/01/2022', '11/01/2022', '12/01/2022'
+                ],
+                axisBorder: {
+                    color: colors.gridBorder,
+                },
+                axisTicks: {
+                    color: colors.gridBorder,
+                },
+            },
+            yaxis: {
+                title: {
+                    text: 'Number of Sales',
+                    style: {
+                        size: 9,
+                        color: colors.muted
+                    }
+                },
+            },
+            legend: {
+                show: true,
+                position: "top",
+                horizontalAlign: 'center',
+                fontFamily: fontFamily,
+                itemMargin: {
+                    horizontal: 8,
+                    vertical: 0
+                },
+            },
+            stroke: {
+                width: 0
+            },
+            dataLabels: {
+                enabled: true,
+                style: {
+                    fontSize: '10px',
+                    fontFamily: fontFamily,
+                },
+                offsetY: -27
+            },
+            plotOptions: {
+                bar: {
+                    columnWidth: "50%",
+                    borderRadius: 4,
+                    dataLabels: {
+                        position: 'top',
+                        orientation: 'vertical',
+                    }
+                },
+            },
+        }
+
+        var apexBarChart = new ApexCharts(document.querySelector("#monthlySalesChart"), options);
+        apexBarChart.render();
+    }
+    // Monthly Sales Chart - END
+
+     // Cloud Storage Chart
+  if ($('#storageChart').length) {
+    var options = {
+      chart: {
+        height: 260,
+        type: "radialBar"
+      },
+      series: [67],
+      colors: [colors.primary],
+      plotOptions: {
+        radialBar: {
+          hollow: {
+            margin: 15,
+            size: "70%"
+          },
+          track: {
+            show: true,
+            background: colors.light,
+            strokeWidth: '100%',
+            opacity: 1,
+            margin: 5, 
+          },
+          dataLabels: {
+            showOn: "always",
+            name: {
+              offsetY: -11,
+              show: true,
+              color: colors.muted,
+              fontSize: "13px"
+            },
+            value: {
+              color: colors.bodyColor,
+              fontSize: "30px",
+              show: true
+            }
+          }
+        }
+      },
+      fill: {
+        opacity: 1
+      },
+      stroke: {
+        lineCap: "round",
+      },
+      labels: ["Storage Used"]
+    };
     
+    var chart = new ApexCharts(document.querySelector("#storageChart"), options);
+    chart.render();    
+  }
+    </script>
+
     <!-- end custom js for this page -->
 </body>
 

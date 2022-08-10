@@ -2214,6 +2214,8 @@ var data_edit_client = function (tbody, table) {
         $("#email").val(data.email);
         $("#departament").val(data.departament_id);
 
+        $(".province").html("");
+
         $.ajax({
             url: 'controller/clientController.php',
             method: 'POST',
@@ -2229,7 +2231,7 @@ var data_edit_client = function (tbody, table) {
                 $("#province").val(data.province_id);
             }
         })
-
+$(".district").html("");
         $.ajax({
             url:'controller/clientController.php',
             method:'POST',

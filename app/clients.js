@@ -6,6 +6,8 @@ $(function(){
 
 let get_departament = function(){
     
+    $(".departament").html("");
+
     $.ajax({
         url:'controller/clientController.php',
         method:'POST',
@@ -24,8 +26,11 @@ let get_departament = function(){
 }
 
 let get_provinces = function(){
+
+   
     
     $(".departament").on('change',function(){
+        $(".province").html("");
         departament  = $(this).val();
         $.ajax({
             url:'controller/clientController.php',
@@ -48,6 +53,7 @@ let get_provinces = function(){
 let get_districts = function(){
     
     $(".province").on('change',function(){
+        $(".district").html("");
         province  = $(this).val();
         $.ajax({
             url:'controller/clientController.php',
