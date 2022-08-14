@@ -161,6 +161,7 @@
                                     <option value="">Seleccione un tipo de documento</option>
                                     <option value="DNI">DNI</option>
                                     <option value="RUC">RUC</option>
+                                    <option value="PTP">Carnet de Extranjería (PTP)</option>
                                 </select>
                             </div>
                         </div>
